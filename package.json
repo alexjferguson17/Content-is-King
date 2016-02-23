@@ -1,0 +1,22 @@
+{
+  "name": "content-is-king",
+  "version": "1.0.0",
+  "description": "A landing page for Flappy Bird.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexjferguson17/Content-is-King.git"
+  },
+  "author": "Alex",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexjferguson17/Content-is-King/issues"
+  },
+  "homepage": "https://github.com/alexjferguson17/Content-is-King#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
