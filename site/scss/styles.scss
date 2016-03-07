@@ -1,1 +1,241 @@
-body {}
+@import "bourbon/bourbon";
+@import "neat/neat";
+
+$white: #FFFFFF;
+$purple: #654e56;
+$blue: #71c5cf;
+$sand: #d4ac57;
+
+* {
+	font-family: 'Varela Round', sans-serif;
+}
+
+.hero { 
+  background: url(../img/Flappybird-Background.png) no-repeat center center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  .hero-cta-text {
+  	max-width: 50%;
+  }
+
+  .hero-cta-text h1 {
+		margin: 0;
+		font-size: 1.5em;
+		text-align: center;
+		color: $white;
+	}
+
+	.hero-cta-text p {
+		color: $white;
+		text-align: center;
+		font-size: .8em;
+		line-height: 2px;
+	}
+
+	@media screen and (min-width: 769px) and (max-width: 1200px) {
+		.hero-cta-text {
+			padding: 5em;
+
+			h1 {
+				font-size: 4em;
+			}
+
+			p {
+				font-size: 1em;
+			}
+		}
+	}
+
+	@media screen and (min-width: 1201px) {
+		.hero-cta-text h1 {
+			font-size: 4em;
+			letter-spacing: 30px;
+		}
+
+		.hero-cta-text p {
+			font-size: 1.3em;
+		}
+	}
+}
+
+.about {
+	background-color: $purple;
+
+	 img {
+		height: 110px;
+		display: block;
+		margin: 0 auto;
+		padding-top: 30px;
+	}
+
+	.bird-container {
+		padding-top: 30px;
+	}
+
+	.about-text-container {
+		color: $white;
+
+		p {
+			text-align: center;
+			max-width: 50%;
+			margin: 0 auto;
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+	}
+
+	@media screen and (min-width: 769px) and (max-width: 1200px) {
+		.bird-container {
+			padding-top: 3em;
+		}
+
+		.about-text-container p {
+			padding-bottom: 4.5em;
+		}
+
+	}
+
+	@media screen and (min-width: 1201px) {
+		@include outer-container;
+		.bird-container { @include span-columns(4); }
+		.about-text-container { @include span-columns(8); }
+		
+		.bird-container,
+		img {
+			padding: 0;
+		}
+
+		padding: 9em 0;
+		max-width: none;
+
+		p {
+			font-size: 1.75em;
+		}
+	}
+}
+
+.features {
+	background-color: $blue;
+
+	h2 {
+		margin: 0;
+		color: $white;
+		text-align: center;
+		padding: 30px 0 30px 0;
+		font-size: 1.75;
+	}
+
+	img {
+		height: 60%;
+		width: 60%;
+		display: block;
+		margin: 0 auto;
+	}
+
+	p {
+		text-align: center;
+		color: $white;
+		font-size: 1em;
+	}
+
+	#style-anger {
+		padding-bottom: 30px;
+		margin-bottom: 0;
+	}
+
+	@media screen and (min-width: 769px) and (max-width: 1200px) {
+		img {
+			width: 40%;
+		}		
+	}
+
+	@media screen and (min-width: 1201px) {
+		.feature-container {
+			@include outer-container;
+			.feat-1 { @include span-columns(4); }
+			.feat-2 { @include span-columns(4); }
+			.feat-3 { @include span-columns(4); }
+
+			img {
+				width: 95%;
+			}
+
+			p {
+				font-size: 1.5em;
+			}
+		}
+
+		h2 {
+			font-size: 3em;
+		}
+	}
+}
+
+.cta {
+	background-color: $sand;
+	padding-bottom: 10px;
+	
+	p {
+		margin: 0;
+		color: $white;
+		text-align: center;
+		max-width: 75%;
+		margin: 0 auto;
+		padding-top: 30px;
+	}
+
+	button {
+		display: block;
+		margin: 2em auto;
+	}
+
+	@media screen and (min-width: 1201px) {
+		p {
+			font-size: 1.75em;
+		}
+	}
+}
+
+.footer-container {
+	p {
+		text-align: center;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

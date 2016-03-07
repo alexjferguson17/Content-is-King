@@ -10,6 +10,7 @@ var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
+var browserSync = require('browser-sync').create();
 
 //JS linting Task
 gulp.task('jshint', function() {
@@ -22,13 +23,8 @@ gulp.task('jshint', function() {
 gulp.task('sass', function(){
   return gulp.src('site/scss/*.scss')
     .pipe(sass())
-    .pipe(gulp.dest('site/css'));
-});
-
-//Watch Task
-gulp.task('watch', function(){
-  gulp.watch('site/js/*.js', ['jshint']);
-  gulp.watch('site/scss/*.scss', ['sass']);
+    .pipe(gulp.dest('site/css'))
+    .pipe(browserSync.stream());
 });
 
 //Minify index
@@ -62,8 +58,22 @@ gulp.task('images', function(){
     .pipe(gulp.dest('build/img'));
 });
 
+//Live browser refresh
+gulp.task('serve', ['sass'], function() {
+
+    browserSync.init({
+        server: "./site"
+    });
+
+    gulp.watch("site/*.html").on('change', browserSync.reload);
+    gulp.watch('site/js/*.js', ['jshint', browserSync.reload]);
+    gulp.watch('site/scss/*.scss', ['sass']);
+});
+
+
+
 //Default Task
-gulp.task('default', ['jshint', 'sass', 'watch']);
+gulp.task('default', ['jshint', 'sass', 'serve']);
 
 //Build Task
 gulp.task('build', ['jshint', 'sass', 'html', 'scripts', 'styles', 'images']);
